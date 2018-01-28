@@ -1,19 +1,14 @@
 package io.public_library.book;
 
-//import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import io.public_library.person.Person;
@@ -36,7 +31,6 @@ public class BookController {
 		model.addAttribute("person", new Person());
 		model.addAttribute("booksList", booksList);
 		model.addAttribute("personsList", personsList);
-		//List<Book> books = new ArrayList<>(bookService.getAllBooks());
 		return "homepage";
 	}
 	
@@ -99,8 +93,6 @@ public class BookController {
 	
 	@RequestMapping(value="/user_registration", method=RequestMethod.GET)
 	public String userRegistrationPage(Model model) {
-		/*String message = (String)model.asMap().get("message");
-		model.addAttribute("message", message);*/
 		model.addAttribute("person", new Person());
 		return "user_registration";
 	}
@@ -119,9 +111,9 @@ public class BookController {
 	}
 	
 	@RequestMapping(value="/messages", method=RequestMethod.GET)
-	public void messages(Model model) {
-		String message = (String)model.asMap().get("message");
-		model.addAttribute("message", message);
+	public void messages() {
+		/*String message = (String)model.asMap().get("message");
+		model.addAttribute("message", message);*/
 	}
 
 }

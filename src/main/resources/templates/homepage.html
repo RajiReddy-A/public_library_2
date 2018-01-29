@@ -14,7 +14,7 @@
 	    <h1>Borrow a book</h1>
 	    <form th:action="@{/}" method="post">
 	      <label>
-	        <pre>Book         </pre>
+	        <b>Book</b>
 	        <select class="textBox" th:field="${book.bookName}">
 	        	<div>
 	        	<option value="" th:disabled="disabled" th:selected="selected">Select a book to borrow   </option>
@@ -25,7 +25,7 @@
 	        </select>
 	      </label><br><br>
 	      <label>
-	        <pre>Username     </pre>
+	        <b>Username</b>
 	        <select class="textBox" th:field="${person.personName}">
 	        	<div>
 	        	<option value="" th:disabled="disabled" th:selected="selected">Select your name          </option>
@@ -36,13 +36,15 @@
 	        </select>
 	      </label><br><br>
 	      <label>
-	        <pre>Mobile      </pre> <input class="textBox" th:field="${person.mobile}" name="mobile" value ="">
+	        <b>Mobile</b> <input type="text" class="textBox" th:field="${person.mobile}" name="mobile" value ="">
 	      </label><br><br>
 	
 	      <input type="submit" value="submit">
 	    </form><br>
 	    
-	    <div class="errormessage">
+	  </div>
+	  
+	  <div class="errormessage">
 	    	<p th:if="${message} == 'same book already borrowed'" th:text="'The book you selected is already with you!'"></p>
 	    </div><br>
 	    
@@ -54,15 +56,16 @@
 	    	<p th:if="${message} == 'incorrect mobile'" th:text="'Please enter the correct mobile number!'"></p>
 	    </div><br>
 	
-	    <form action="/return_book">
-	      <input type="submit" value="RETURN A BOOK?">
-	    </form>
+		<div class="redirectlinks">
+		    <form action="/return_book">
+		      <input type="submit" value="RETURN A BOOK?">
+		    </form><br><br>
+		    
+		    <form action="/user_registration">
+		      <input type="submit" value="NEW USER? CLICK TO REGISTER!">
+		    </form>
+	    </div>
 	    
-	    <form action="/user_registration">
-	      <input type="submit" value="NEW USER? CLICK TO REGISTER!">
-	    </form>
-	
-	  </div>
 	</body>
 	
 </html>

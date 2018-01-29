@@ -16,13 +16,17 @@
 	  	<p th:if="${message} == 'successfully returned'" th:text="'You have returned the book, Thank You!'"></p>
 	  </div>	
 	  
-	  <div class="form">
+	  <div class="form" class="redirectlinks">
 	    <form action="/">
 	      <input type="submit" value="BORROW A BOOK?">
 	    </form><br><br>
 	    
 	    <form action="/return_book">
 	      <input type="submit" value="RETURN A BOOK?">
+	    </form><br><br>
+	    
+	    <form action="/user_registration">
+	      <input type="submit" value="NEW USER? CLICK TO REGISTER!">
 	    </form>
 	
 	  </div>

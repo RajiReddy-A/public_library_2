@@ -1,0 +1,48 @@
+Description:
+
+-This app is useful to maintain records in a library by tracking the books available, people who borrowed the books and their mobile numbers.
+-It is created with spring boot, maven, JPA, mysql, thymeleaf template engine.
+
+Software used:
+
+- Spring Tool Suite(STS)
+- mysql as database
+- PHP 7.1 (7.1.12VC14 x64 Thread Safe) --> http://windows.php.net/download/
+- phpmyadmin 4.7.6 - Administration tool for mysql -->  https://www.phpmyadmin.net/
+
+MySql database details:
+
+Database name: public_library_db3
+Tables name:    book, person, bookandperson
+Sample data:
+<---
+Table: book
+			bookName(primary key)				author							copiesTotal				copiesAvailable	
+		The Hunger Games					Suzanne Collins						5							4
+		To Kill a Mockingbird				Harper Lee							4							3
+		The Book Thief						Markus Zusak						5							5	
+		Life of Pi							Yann Martel							7							6	
+		The Adventures of Sherlock Holmes	Arthur Conan Doyle					3							3
+
+Table: person
+		personName(primary key)					mobile
+			Mark							9876543210
+			Dinesh							9876543211
+			
+Table: bookandperson
+		personName								bookName
+		Mark								The Hunger Games
+		Mark								To Kill a Mockingbird
+		Dinesh								Life of Pi
+--->
+
+HOW TO RUN THE APP:
+
+After installing the required software mentioned above, open STS-->click import-->Existing maven projects into workspace-->(Browse to the target unzipped file)
+
+NOTE: When the project is moved to another PC, database username and password should be updated in src/main/resources/application.properties,
+and database url should be update in the same file -> spring.datasource.url = jdbc:mysql://localhost:3306/public_library_db3 where public_library_db3 is the table name I used
+
+To run the app,select PublicLibraryApplication.java in src/main/java/io.public_library/ and click 'run as java application'
+
+Github repository: https://github.com/RajiReddy-A/public_library_2.git		
